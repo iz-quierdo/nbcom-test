@@ -1,0 +1,1 @@
+Nb company test assignment
