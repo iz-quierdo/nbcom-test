@@ -1,0 +1,29 @@
+<!--#include virtual="/parts/header.html" -->
+
+<div id="app">
+  <form action="./send.php">
+    <h2>Тип устройства</h2>
+    <option-block
+      v-for="option in typeOptions"
+      v-bind:title="option.title"
+      v-bind:code="option.code"
+      v-bind:config="option.config"
+    ></option-block>
+    <h2>Характеристики</h2>
+    <option-block
+      v-for="option in featureOptions"
+      v-bind:title="option.title"
+      v-bind:code="option.code"
+      v-bind:config="option.config"
+    ></option-block>
+    <h2>Комплектация</h2>
+    <option-block
+      v-for="option in bundleOptions"
+      v-bind:title="option.title"
+      v-bind:code="option.code"
+      v-bind:config="option.config"
+    ></option-block>
+  </form>
+</div>
+
+<!--#include virtual="/parts/footer.html" -->

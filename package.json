@@ -1,0 +1,30 @@
+{
+  "name": "nbcom-test",
+  "version": "1.0.0",
+  "description": "Nb company test assignment",
+  "main": "index.js",
+  "author": "Alexander Smirnov",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "browser-sync": "^2.26.13",
+    "browsersync-ssi": "^0.2.4",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-rsync": "0.0.9",
+    "gulp-sass": "^4.1.0",
+    "gulp-ssi": "^0.1.5",
+    "webpack-stream": "^6.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "vue": "^2.6.12"
+  }
+}
