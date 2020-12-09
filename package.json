@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "reset-css": "^5.0.1",
     "vue": "^2.6.12"
   }
 }
