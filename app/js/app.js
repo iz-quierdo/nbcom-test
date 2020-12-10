@@ -119,17 +119,25 @@ new Vue({
     });
   },
   methods: {
-    onSelectButton() {
-      console.log('this.resultBlock');
+    onSelect() {
       const typeHeader = document.querySelector('#type-block h3').textContent;
       const typeRadios = document.querySelector(
         '#type-block input[type=radio]:checked'
       ).value;
-      console.log(typeRadios);
-      this.resultBlock = `
-        <h2>${typeHeader}</h2>
-        <p>${typeRadios}</p>
 
+      const featureResultBlock = [];
+      const featureBlock = document.querySelectorAll(
+        '#feature-block .option-block input[type=radio]:checked'
+      );
+
+      featureBlock.forEach((block) => {
+        featureResultBlock.push(block.value);
+      });
+      const featureResultBlockText = featureResultBlock.join(', ');
+
+      this.resultBlock = `
+        <h2>${typeHeader}: ${typeRadios}</h2>
+        <p class="small">${featureResultBlockText}</p>
       `;
     },
   },

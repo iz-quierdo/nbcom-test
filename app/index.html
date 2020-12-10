@@ -6,7 +6,7 @@
       <tab name="Тип устройства" :selected="true">
         <div id="type-block">
           <option-block
-            @selected="onSelectButton"
+            @selected="onSelect"
             v-for="option in typeOptions"
             v-bind:title="option.title"
             v-bind:code="option.code"
@@ -17,6 +17,7 @@
       <tab name="Характеристики">
         <div id="feature-block">
           <option-block
+            @selected="onSelect"
             v-for="option in featureOptions"
             v-bind:title="option.title"
             v-bind:code="option.code"
