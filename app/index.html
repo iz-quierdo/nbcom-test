@@ -4,31 +4,38 @@
   <div class="main">
     <tabs>
       <tab name="Тип устройства" :selected="true">
-        <option-block
-          v-for="option in typeOptions"
-          v-bind:title="option.title"
-          v-bind:code="option.code"
-          v-bind:config="option.config"
-        ></option-block>
+        <div id="type-block">
+          <option-block
+            @selected="onSelectButton"
+            v-for="option in typeOptions"
+            v-bind:title="option.title"
+            v-bind:code="option.code"
+            v-bind:config="option.config"
+          ></option-block>
+        </div>
       </tab>
       <tab name="Характеристики">
-        <option-block
-          v-for="option in featureOptions"
-          v-bind:title="option.title"
-          v-bind:code="option.code"
-          v-bind:config="option.config"
-        ></option-block>
+        <div id="feature-block">
+          <option-block
+            v-for="option in featureOptions"
+            v-bind:title="option.title"
+            v-bind:code="option.code"
+            v-bind:config="option.config"
+          ></option-block>
+        </div>
       </tab>
       <tab name="Комплектация">
-        <option-block
-          v-for="option in bundleOptions"
-          v-bind:title="option.title"
-          v-bind:code="option.code"
-          v-bind:config="option.config"
-        ></option-block>
+        <div id="bundle-block">
+          <option-block
+            v-for="option in bundleOptions"
+            v-bind:title="option.title"
+            v-bind:code="option.code"
+            v-bind:config="option.config"
+          ></option-block>
+        </div>
       </tab>
     </tabs>
-    <option-result v-bind:title="typeOptionsTitle"></option-result>
+    <option-result v-html:text="resultBlock"></option-result>
   </div>
 </div>
 
