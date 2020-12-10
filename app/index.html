@@ -28,6 +28,7 @@
       <tab name="Комплектация">
         <div id="bundle-block">
           <option-block
+            @selected="onSelect"
             v-for="option in bundleOptions"
             v-bind:title="option.title"
             v-bind:code="option.code"

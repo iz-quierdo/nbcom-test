@@ -121,23 +121,48 @@ new Vue({
   methods: {
     onSelect() {
       const typeHeader = document.querySelector('#type-block h3').textContent;
-      const typeRadios = document.querySelector(
+
+      const typeRadiosEl = document.querySelector(
         '#type-block input[type=radio]:checked'
-      ).value;
+      );
+
+      let typeRadios = 'Не выбрана';
+
+      if (typeRadiosEl !== null) {
+        typeRadios = typeRadiosEl.value;
+      }
 
       const featureResultBlock = [];
       const featureBlock = document.querySelectorAll(
         '#feature-block .option-block input[type=radio]:checked'
       );
 
-      featureBlock.forEach((block) => {
-        featureResultBlock.push(block.value);
-      });
+      if (featureBlock !== null) {
+        featureBlock.forEach((block) => {
+          featureResultBlock.push(block.value);
+        });
+      }
       const featureResultBlockText = featureResultBlock.join(', ');
+
+      const bundleResultBlock = [];
+      const bundleBlock = document.querySelectorAll(
+        '#bundle-block .option-block input[type=radio]:checked'
+      );
+
+      let bundleResultBlockText = '';
+
+      if (bundleBlock.length > 0) {
+        bundleBlock.forEach((block) => {
+          bundleResultBlock.push(block.value);
+        });
+        bundleResultBlockText = bundleResultBlock.join(', ');
+        bundleResultBlockText = 'В комплекте: ' + bundleResultBlockText;
+      }
 
       this.resultBlock = `
         <h2>${typeHeader}: ${typeRadios}</h2>
         <p class="small">${featureResultBlockText}</p>
+        <p class="small">${bundleResultBlockText}</p>
       `;
     },
   },
