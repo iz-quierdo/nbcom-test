@@ -17,6 +17,7 @@
   height: 250px
   padding: 30px 40px 20px 20px
   p
+    max-width: 500px
     padding: 10px 40px 0 0
 
 .option-block
@@ -59,6 +60,8 @@
       display: inline-block
       counter-increment: li-count
       padding: 5px 0
+      &:hover
+        text-decoration: underline
       &:last-child
           &::after
             content: none
